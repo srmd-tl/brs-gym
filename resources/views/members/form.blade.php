@@ -1,6 +1,6 @@
 <?php use Carbon\Carbon; ?>
 
-<!-- Hidden Fields -->
+        <!-- Hidden Fields -->
 @if(Request::is('members/create'))
     {!! Form::hidden('invoiceCounter',$invoiceCounter) !!}
     {!! Form::hidden('memberCounter',$memberCounter) !!}
@@ -127,8 +127,8 @@
 
     <div class="col-sm-6">
         <div class="form-group">
-        {!! Form::label('status','Status') !!}
-        <!--0 for inactive , 1 for active-->
+            {!! Form::label('status','Status') !!}
+            <!--0 for inactive , 1 for active-->
             {!! Form::select('status',array('1' => 'Active', '0' => 'InActive'),null,['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'status']) !!}
         </div>
     </div>
@@ -161,12 +161,12 @@
             </div>
 
 
-            <div class="col-sm-12">
-                <div class="form-group">
-                    {!! Form::label('pin_code','Pin Code',['class'=>'control-label']) !!}
-                    {!! Form::text('pin_code',null,['class'=>'form-control', 'id' => 'pin_code']) !!}
-                </div>
-            </div>
+            {{--            <div class="col-sm-12">--}}
+            {{--                <div class="form-group">--}}
+            {{--                    {!! Form::label('pin_code','Pin Code',['class'=>'control-label']) !!}--}}
+            {{--                    {!! Form::text('pin_code',null,['class'=>'form-control', 'id' => 'pin_code']) !!}--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
         </div>
     </div>
 
