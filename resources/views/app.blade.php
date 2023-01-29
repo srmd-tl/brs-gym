@@ -201,7 +201,7 @@
                 @permission(['manage-gymie','manage-expenses','view-expense'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('expenses*',true) }}">
                     <a href="#">
-                        <i class="fa fa-inr"></i> <span>Expenses</span>
+                        <i class="fa fa-pkr"></i> <span>Expenses</span>
                     </a>
                     <ul>
                         <li class="{{ Utilities::setActiveMenu('expenses/all') }}"><a href="{{ action('ExpensesController@index') }}">All Expenses</a></li>

@@ -29,9 +29,9 @@ var startDateValidators = {
 			},
 			address: {
 				validators: {
-					notEmpty: {
-						message: 'The address is required and can\'t be empty'
-					},
+					// notEmpty: {
+					// 	message: 'The address is required and can\'t be empty'
+					// },
 					stringLength: {
                         max: 200,
                         message: 'It must be less than 200 characters'
@@ -40,9 +40,9 @@ var startDateValidators = {
 			},
 			email: {
 				validators: {
-					notEmpty: {
-						message: 'The email address is required and can\'t be empty'
-					},
+					// notEmpty: {
+					// 	message: 'The email address is required and can\'t be empty'
+					// },
 					emailAddress: {
 						message: 'The input is not a valid email address'
 					},
@@ -72,22 +72,22 @@ var startDateValidators = {
 			},
 			health_issues: {
 				validators: {
-					notEmpty: {
-						message: 'This field required and can\'t be empty'
-					}
+					// notEmpty: {
+					// 	message: 'This field required and can\'t be empty'
+					// }
 				}
 			},
-			proof_name: {
-				validators: {
-					notEmpty: {
-						message: 'The proof name is required and can\'t be empty'
-					},
-					stringLength: {
-                        max: 50,
-                        message: 'It must be less than 50 characters'
-                    }
-				}
-			},
+			// proof_name: {
+			// 	validators: {
+			// 		notEmpty: {
+			// 			message: 'The proof name is required and can\'t be empty'
+			// 		},
+			// 		stringLength: {
+            //             max: 50,
+            //             message: 'It must be less than 50 characters'
+            //         }
+			// 	}
+			// },
 			gender: {
 				validators: {
 					notEmpty: {
@@ -228,7 +228,7 @@ var startDateValidators = {
 						message: 'The input is not a valid number'
 					},
 					stringLength: {
-                        max: 10,
+                        max: 11,
                         message: 'It must be less than 10 characters'
                     }
 				}
@@ -243,7 +243,7 @@ var startDateValidators = {
 						message: 'The input is not a valid number'
 					},
 					stringLength: {
-                        max: 10,
+                        max: 11,
                         message: 'It must be less than 10 characters'
                     }
 				}

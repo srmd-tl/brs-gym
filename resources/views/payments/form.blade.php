@@ -15,7 +15,7 @@
             <div class="form-group">
                 {!! Form::label('payment_amount','Amount') !!}
                 <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-inr"></i></div>
+                    <div class="input-group-addon"><i class="fa fa-money"></i></div>
                     {!! Form::text('payment_amount',(isset($invoice) ? $invoice->pending_amount : null),['class'=>'form-control', 'id' => 'payment_amount']) !!}
                 </div>
             </div>

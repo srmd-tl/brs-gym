@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Utils\Helper;
 use DB;
 use Auth;
 use App\Member;
@@ -464,4 +465,12 @@ class MembersController extends Controller
 
         return 'Select daterange filter';
     }
+    public function import()
+    {
+        $data=Helper::readCSV('members.csv');
+        dd($data);
+
+    }
+
+
 }

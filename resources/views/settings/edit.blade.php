@@ -201,7 +201,7 @@
                                             <div class="form-group">
                                                 {!! Form::label('admission_fee','Admission Fee') !!}
                                                 <div class="input-group">
-                                                    <div class="input-group-addon"><i class="fa fa-inr"></i></div>
+                                                    <div class="input-group-addon"><i class="fa fa-money"></i></div>
                                                     {!! Form::text('admission_fee',$settings['admission_fee'],['class'=>'form-control', 'id' => 'admission_fee']) !!}
                                                 </div>
                                             </div>
