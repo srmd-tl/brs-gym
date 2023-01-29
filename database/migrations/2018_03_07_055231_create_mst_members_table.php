@@ -21,12 +21,10 @@ class CreateMstMembersTable extends Migration
             $table->string('email', 50)->unique('email')->comment('member\'s email id');
             $table->string('address', 200)->comment('member\'s address');
             $table->boolean('status')->comment('0 for inactive , 1 for active')->default(1);
-            $table->string('proof_name', 50)->comment('name of the proof provided by member');
-            $table->string('proof_photo', 50)->comment('photo of the proof');
             $table->char('gender', 50)->comment('member\'s gender');
             $table->string('contact', 11)->unique('contact')->comment('member\'s contact number');
-            $table->string('emergency_contact', 11);
-            $table->string('health_issues', 50);
+            $table->string('emergency_contact', 11)->nullable();
+            $table->string('health_issues', 50)->nullable();
 //            $table->integer('pin_code');
             $table->string('occupation', 50)->nullable();
             $table->string('aim', 50)->nullable();

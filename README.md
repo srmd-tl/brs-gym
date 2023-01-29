@@ -1,4 +1,4 @@
-<p  align="center"><img  src="https://user-images.githubusercontent.com/1039236/36820389-964422c0-1d13-11e8-8dac-d58014f59c24.png"></p>
+<p  align="center"><img  src="#" alt="BRS" ></p>
 
 <p align="center">
 <a href="https://github.com/lubusIN/laravel-gymie/releases"><img src="https://img.shields.io/github/release/lubusIN/laravel-gymie.svg?style=flat-square" alt="Latest Stable Version"></a>
@@ -85,7 +85,7 @@ Test drive the application without going through the hassel of installation.
 
 ```
 url: https://demo.gymie.in
-email: admin@gymie.in
+email: admin@brs.pk
 password: password
 ```
 
