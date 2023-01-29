@@ -129,36 +129,35 @@ class MembersController extends Controller
     public function store(Request $request)
     {
         // Member Model Validation
-        $this->validate($request, ['email' => 'unique:mst_members,email',
+        $this->validate($request, ['email' => 'email',
                                    'contact' => 'unique:mst_members,contact',
                                    'member_code' => 'unique:mst_members,member_code', ]);
+        // Store member's personal details
+        $memberData = ['name'=>$request->name,
+            'DOB'=> $request->DOB,
+            'gender'=> $request->gender,
+            'contact'=> $request->contact,
+            'emergency_contact'=> $request->emergency_contact,
+            'health_issues'=> $request->health_issues,
+            'email'=> $request->email,
+            'address'=> $request->address,
+            'member_id'=> $request->member_id,
+            'member_code'=> $request->member_code,
+            'status'=> $request->status,
+//                                    'pin_code'=> $request->pin_code,
+            'occupation'=> $request->occupation,
+            'aim'=> $request->aim,
+            'source'=> $request->source, ];
 
+        $member = new Member($memberData);
+        $member->createdBy()->associate(Auth::user());
+        $member->updatedBy()->associate(Auth::user());
+        $member->save();
+        dd();
         // Start Transaction
         DB::beginTransaction();
 
         try {
-            // Store member's personal details
-            $memberData = ['name'=>$request->name,
-                                    'DOB'=> $request->DOB,
-                                    'gender'=> $request->gender,
-                                    'contact'=> $request->contact,
-                                    'emergency_contact'=> $request->emergency_contact,
-                                    'health_issues'=> $request->health_issues,
-                                    'email'=> $request->email,
-                                    'address'=> $request->address,
-                                    'member_id'=> $request->member_id,
-                                    'proof_name'=> $request->proof_name,
-                                    'member_code'=> $request->member_code,
-                                    'status'=> $request->status,
-                                    'pin_code'=> $request->pin_code,
-                                    'occupation'=> $request->occupation,
-                                    'aim'=> $request->aim,
-                                    'source'=> $request->source, ];
-
-            $member = new Member($memberData);
-            $member->createdBy()->associate(Auth::user());
-            $member->updatedBy()->associate(Auth::user());
-            $member->save();
 
             // Adding media i.e. Profile & proof photo
             if ($request->hasFile('photo')) {
@@ -330,6 +329,7 @@ class MembersController extends Controller
 
             return redirect(action('MembersController@show', ['id' => $member->id]));
         } catch (\Exception $e) {
+            logger()->error($e->getMessage());
             DB::rollback();
             flash()->error('Error while creating the member');
 

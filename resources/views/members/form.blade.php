@@ -68,39 +68,6 @@
         </div>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-sm-6">
-        <div class="form-group">
-            {!! Form::label('proof_name','Proof name') !!}
-            {!! Form::text('proof_name',null,['class'=>'form-control', 'id' => 'proof_name']) !!}
-        </div>
-    </div>
-
-    @if(isset($member))
-        <?php
-        $media = $member->getMedia('proof');
-        $image = ($media->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=18&txt=NA&w=70&h=70' : url($media[0]->getUrl('form')));
-        ?>
-        <div class="col-sm-4">
-            <div class="form-group">
-                {!! Form::label('proof_photo','Proof photo') !!}
-                {!! Form::file('proof_photo',['class'=>'form-control', 'id' => 'proof_photo']) !!}
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <img alt="proof Pic" class="pull-right" src="{{ $image }}"/>
-        </div>
-    @else
-        <div class="col-sm-6">
-            <div class="form-group">
-                {!! Form::label('proof_photo','Proof photo') !!}
-                {!! Form::file('proof_photo',['class'=>'form-control', 'id' => 'proof_photo']) !!}
-            </div>
-        </div>
-    @endif
-</div>
-
 <div class="row">
     @if(isset($member))
         <?php

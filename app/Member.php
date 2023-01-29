@@ -22,7 +22,6 @@ class Member extends Model implements HasMediaConversions
         'email',
         'address',
         'status',
-        'proof_name',
         'gender',
         'contact',
         'emergency_contact',
