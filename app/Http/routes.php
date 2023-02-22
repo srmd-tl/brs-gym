@@ -69,6 +69,7 @@ Route::group(['middleware' => ['auth']], function () {
 //MembersController
 Route::group(['prefix' => 'members', 'middleware' => ['auth']], function () {
     Route::get('/', ['middleware' => ['permission:manage-gymie|manage-members|view-member'], 'uses' => 'MembersController@index']);
+    Route::get('/import', ['middleware' => ['permission:manage-gymie|manage-members|view-member'], 'uses' => 'MembersController@import']);
     Route::get('all', ['middleware' => ['permission:manage-gymie|manage-members|view-member'], 'uses' => 'MembersController@index']);
     Route::get('active', ['middleware' => ['permission:manage-gymie|manage-members|view-member'], 'uses' => 'MembersController@active']);
     Route::get('inactive', ['middleware' => ['permission:manage-gymie|manage-members|view-member'], 'uses' => 'MembersController@inactive']);

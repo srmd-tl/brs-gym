@@ -18,7 +18,7 @@ class CreateMstMembersTable extends Migration
             $table->string('name', 50)->comment('member\'s name');
             $table->string('photo', 50)->comment('member\'s photo');
             $table->date('DOB')->comment('member\'s date of birth');
-            $table->string('email', 50)->unique('email')->comment('member\'s email id');
+            $table->string('email', 50)->nullable();
             $table->string('address', 200)->comment('member\'s address');
             $table->boolean('status')->comment('0 for inactive , 1 for active')->default(1);
             $table->char('gender', 50)->comment('member\'s gender');

@@ -467,7 +467,8 @@ class MembersController extends Controller
     }
     public function import()
     {
-        $data=Helper::readCSV('members.csv');
+        $data=Helper::readCSV('backup');
+        Member::insert($data);
         dd($data);
 
     }
